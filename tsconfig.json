@@ -24,6 +24,11 @@
       "dom"
     ]
   },
+  "paths": {
+    "@Core-Components/*": [
+      "app/core/components/*"
+    ],
+  },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,

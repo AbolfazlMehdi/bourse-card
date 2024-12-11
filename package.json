@@ -10,6 +10,7 @@
   },
   "private": true,
   "dependencies": {
+    "@angular-builders/custom-webpack": "^15.0.0",
     "@angular/animations": "^15.2.0",
     "@angular/common": "^15.2.0",
     "@angular/compiler": "^15.2.0",
@@ -18,8 +19,19 @@
     "@angular/platform-browser": "^15.2.0",
     "@angular/platform-browser-dynamic": "^15.2.0",
     "@angular/router": "^15.2.0",
+    "@ng-bootstrap/ng-bootstrap": "^14.2.0",
+    "@ng-select/ng-select": "^10.0.4",
+    "bootstrap": "^5.3.2",
+    "i": "^0.3.7",
+    "ngx-otp-input": "^0.11.4",
+    "npm": "^10.9.2",
+    "postcss": "^8.4.49",
+    "postcss-loader": "^8.1.1",
+    "resolve-url-loader": "^5.0.0",
+    "rtlcss": "^4.3.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "worker-timers": "^7.1.1",
     "zone.js": "~0.12.0"
   },
   "devDependencies": {

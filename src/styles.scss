@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import 'assets/scss/my-bootstrap-variables';
+@import 'node_modules/bootstrap/scss/bootstrap.scss';
+@import "node_modules/@ng-select/ng-select/themes/default.theme.css";
+@import 'assets/scss/fonts';
+@import 'assets/scss/custom.scss';
+// .ngx-otp-input.ng-invalid.ng-touched{
+//     border-color: var(--bs-danger) ;
+// }
