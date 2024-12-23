@@ -1,0 +1,28 @@
+<ngb-toast *ngFor="let toast of toastService.toasts" class="mb-3" [class]="toast.classname"
+  [autohide]="toast.autohide !== undefined ? toast.autohide : autohide" (mouseenter)="autohide = false"
+  (mouseleave)="autohide = true" [delay]="toast.delay || 5000" (hide)="toastService.remove(toast)"
+  (hidden)="toastService.remove(toast)">
+
+  <ng-template *ngIf="isHeaderTemplate(toast); else header">
+    <div class="status-icon rounded-1"></div>
+    <ng-template ngbToastHeader [ngTemplateOutlet]="toast.title"></ng-template>
+  </ng-template>
+
+  <ng-template ngbToastHeader #header>
+    <span class="header-text">
+      <div class="status-icon rounded-1"></div>
+      <span [innerHtml]="toast.title"></span>
+    </span>
+  </ng-template>
+
+  <ng-template *ngIf="isTemplate(toast); else noText">
+    <ng-template [ngTemplateOutlet]="toast.content"></ng-template>
+  </ng-template>
+
+  <ng-template #noText>
+    <span *ngIf="!isArray(toast)" [innerHtml]="toast.content">   </span>
+    <div *ngIf="isArray(toast)">
+      <p class="mb-0" *ngFor="let item of toast.content" [innerHtml]="item">  </p>
+    </div>
+  </ng-template>
+</ngb-toast>

@@ -1,0 +1,32 @@
+<div class="vh-100 d-flex align-items-center justify-content-center">
+    <div class="container bg-white shadow rounded-3 p-0">
+        <div class="row g-0 rounded-3">
+            <div class="col-lg-5 col-12 py-3">
+                <div class="w-100 text-center">
+                    <img src="../../../assets/img/auth-img.png" alt="auth" style="width: 100px; height: 100px;"
+                        class="mt-4" />
+                    <p class="fs-4 text-info fw-semibold">بورس کارت </p>
+                </div>
+                <div class="mx-lg-5 px-5 pe-lg-5">
+                    <!-- <ng-container *ngIf="step === 1">
+                        <div class="col-12 mb-3">
+                            <label>نوع مشتری</label>
+                            <ng-select [items]="customerType" [bindLabel]="'title'" [bindValue]="'value'"
+                                [(ngModel)]="customerTypeValue"  ></ng-select>
+                        </div>
+                    </ng-container> -->
+                    <ng-container *ngIf="customerTypeValue === 1">
+                        <app-register-real-person  ></app-register-real-person>
+                    </ng-container>
+                    <ng-container *ngIf="customerTypeValue === 2">
+                        <app-register-legal-person  ></app-register-legal-person>
+                    </ng-container>
+                </div>
+
+            </div>
+            <div class="col-lg-7  d-lg-block d-none">
+                <div class="rounded-end-3 h-100 bg-login"></div>
+            </div>
+        </div>
+    </div>
+</div>

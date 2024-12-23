@@ -1,0 +1,57 @@
+<div class="vh-100 d-flex align-items-center justify-content-center">
+  <div class="container bg-white shadow rounded-3 p-0">
+    <div class="row g-0 rounded-3">
+      <div class="col-lg-5 col-12 py-3">
+        <div class="w-100 text-center">
+          <img src="../../../assets/img/auth-img.png" alt="auth" style="width: 100px; height: 100px;" class="mt-4"/>
+          <p class="fs-4 text-info fw-semibold">بورس کارت </p>
+        </div>
+        <form class="mx-lg-5 px-5 pe-lg-5" [formGroup]="form">
+          <div class="row g-3">
+            <div class="col-12">
+              <label class="mb-1">کد ملی خود را وارد کنید.</label>
+              <input placeholder="کد ملی" class="form-control"/>
+            </div>
+            <div class="col-12">
+              <label class="mb-1">رمز عبور خود را وارد کنید .</label>
+              <app-password-input formControlName="password" [placeholder]="'رمز عبور.'" ></app-password-input>
+            </div>
+            <div class="col-12">
+              <label class="mb-1">عبارت امنیتی </label>
+              <app-captcha [captcha]="captchaData"></app-captcha>
+
+
+            </div>
+            <div class="col-12 d-flex">
+              <p>رمز عبور خود را فراموش کرده اید؟</p>
+              <a class="ms-3 text-info cursor text-decoration-none">بازیابی رمز عبور
+                <svg width="17" height="17">
+                  <use xlink:href="assets/img/icons.svg#icon-arrow-left">
+                  </use>
+                </svg>
+              </a>
+            </div>
+            <div class="col-6 d-grid my-5">
+              <button class="btn btn-outline-primary p-3">انصراف
+              </button>
+            </div>
+            <div class="col-6 d-grid my-5">
+              <button class="btn btn-primary p-3">ورود
+                <svg width="17" height="17">
+                  <use xlink:href="assets/img/icons.svg#icon-arrow-left">
+                  </use>
+                </svg>
+              </button>
+            </div>
+
+
+          </div>
+        </form>
+      </div>
+      <div class="col-lg-7  d-lg-block d-none">
+        <div class="rounded-end-3 h-100 bg-login"></div> 
+      </div>
+    </div>
+  </div>
+</div>
+ 

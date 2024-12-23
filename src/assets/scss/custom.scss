@@ -1,0 +1,29 @@
+/* rtl:begin:ignore */
+body {
+  direction: rtl;
+  font-family: 'IRANSans';
+  background-color: var(--bs-gray-200);
+}
+
+.cursor {
+  cursor: pointer;
+}
+.ngx-otp-input-container{
+  justify-content: center;
+  direction: ltr;
+  .ngx-otp-input-box{
+    &:first-child{
+      margin-left: 5px!important;
+    }
+    &:last-child{
+      margin-right: 5px!important;
+    }
+    .ngx-otp-input{
+      border-color: #e6e6e6;
+    }
+  }
+}
+
+
+
+/* rtl:end:ignore */

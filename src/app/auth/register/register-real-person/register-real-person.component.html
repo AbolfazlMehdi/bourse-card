@@ -1,0 +1,65 @@
+<ng-container *ngIf="step === 1">
+    <form [formGroup]="form">
+        <div class="row g-3">
+            <div class="col-12">
+                <label class="mb-1">کد ملی خود را وارد کنید.</label>
+                <input placeholder="کد ملی" class="form-control" />
+            </div>
+            <div class="col-12">
+                <label class="mb-1">شماره همراه خود را وارد کنید.</label>
+                <input placeholder="شماره همراه" class="form-control" />
+            </div>
+            <div class="col-12">
+                <label class="mb-1">عبارت امنیتی </label>
+                <app-captcha [captcha]="captchaData"></app-captcha>
+
+
+            </div>
+            <div class="col-6 d-grid my-5">
+                <button class="btn btn-outline-primary p-3">انصراف
+                </button>
+            </div>
+            <div class="col-6 d-grid my-5">
+                <button class="btn btn-primary p-3" (click)="onNextStep(2)">مرحله بعد
+                    <svg width="17" height="17">
+                        <use xlink:href="assets/img/icons.svg#icon-arrow-left">
+                        </use>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </form>
+</ng-container>
+<ng-container *ngIf="step === 2">
+    <form [formGroup]="otpForm">
+        <div class="row g-3">
+            <div class="col-12">
+                <label class="mb-1">کد ارسال شده به شماره همراه خود را وارد کنید. </label>
+                <ngx-otp-input   (fill)="otpComplete($event)"  
+                [config]="otpOptions"></ngx-otp-input>
+            </div>
+            <div class="col-12">
+                <label class="mb-1">رمز عبور خود را وارد کنید.</label>
+                <app-password-input formControlName="password" [placeholder]="'رمز عبور.'" ></app-password-input>
+                <app-password-strength-bar [passwordToCheck]="otpForm.get('password')?.value" (validator)="onCheckPassPattern($event)"></app-password-strength-bar>
+            </div>
+            <div class="col-12">
+                <label class="mb-1">تکرار رمز عبور .</label>
+                <app-password-input [placeholder]="'تکرار رمز عبور .'"></app-password-input>
+            </div>
+            <div class="col-6 d-grid my-5">
+                <button class="btn btn-outline-primary p-3" (click)="onGoToPrevStep(1)">بازگشت
+                </button>
+            </div>
+            <div class="col-6 d-grid my-5">
+                <button class="btn btn-primary p-3" (click)="onNextStep(3)">مرحله بعد
+                    <svg width="17" height="17">
+                        <use xlink:href="assets/img/icons.svg#icon-arrow-left">
+                        </use>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </form>
+</ng-container>
